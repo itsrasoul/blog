@@ -1,0 +1,289 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>technotech</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+
+    @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap")
+    body {
+    background: black;
+    margin: 0; /* Remove default body margin */
+    overflow: hidden; /* Prevent scrollbar due to canvas animation */
+    }
+    canvas {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set a negative z-index to place it behind other content */
+    }
+
+
+    .container {
+    text-align: center; /* Center-align content */
+    margin-top: 50px; /* Add space at the top */
+    }
+    .btn-primary {
+      background-color: #333333; /* Dark gray button background color */
+      border-color: #333333; /* Dark gray border color */
+      border-radius: 5px; /* Rounded corners */
+      padding: 10px 50px; /* Add padding */
+      transition: all 0.3s ease; /* Smooth transition for hover effect */
+      font-size: 16px; /* Increase font size */
+      color: #ffffff; /* Text color */
+      outline: none; /* Remove default focus outline */
+  }
+    .btn-primary:hover {  
+    border-color: #555555; /* Dark gray border color on hover */
+    }
+    .animate-fade-in {
+    animation: fadeIn ease-in-out 1s forwards;
+    opacity: 0;
+    }
+    @keyframes fadeIn {
+    from {
+    opacity: 0;
+    }
+    to {
+    opacity: 1;
+    }
+    }
+    .container-secondary {
+    background-color: #333333; /* Dark gray background color */
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    }
+    .creative-element {
+    font-size: 24px;
+    margin-bottom: 20px;
+    }
+
+    h1 {
+    font-size: 3rem; /* Adjust font size */
+    color: white; /* Change color to green */
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold; /* Set font weight to bold */
+    margin: 1rem 0; /* Adjust margin */
+    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.5);
+    }
+
+
+    /* Typewriter effect 1 */
+    @keyframes typing {
+    0.0000%, 27.3488% { content: ""; }
+    1.1395%, 26.2093% { content: "E"; }
+    2.2791%, 25.0698% { content: "Ex"; }
+    3.4186%, 23.9302% { content: "Exp"; }
+    4.5581%, 22.7907% { content: "Expl"; }
+    5.6977%, 21.6512% { content: "Explo"; }
+    6.8372%, 20.5116% { content: "Explor"; }
+    7.9767%, 19.3721% { content: "Explore"; }
+    9.1163%, 18.2326% { content: "Explorer"; }
+
+    30.7674%, 51.2791% { content: ""; }
+    31.9070%, 50.1395% { content: "W"; }
+    33.0465%, 49.0000% { content: "Wr"; }
+    34.1860%, 47.8605% { content: "Wri"; }
+    35.3256%, 46.7209% { content: "Writ"; }
+    36.4651%, 45.5814% { content: "Write"; }
+    37.6047%, 44.4419% { content: "Writer"; }
+
+    54.6977%, 75.2093% { content: ""; }
+    55.8372%, 74.0698% { content: "R"; }
+    56.9767%, 72.9302% { content: "Re"; }
+    58.1163%, 71.7907% { content: "Rea"; }
+    59.2558%, 70.6512% { content: "Read"; }
+    60.3953%, 69.5116% { content: "Reade"; }
+    61.5349%, 68.3721% { content: "Reader"; }
+
+    78.6279%, 96.8605% { content: ""; }
+    79.7674%, 95.7209% { content: "H"; }
+    80.9070%, 94.5814% { content: "Hu"; }
+    82.0465%, 93.4419% { content: "Hum"; }
+    83.1860%, 92.3023% { content: "Huma"; }
+    84.3256%, 91.1628% { content: "Human"; }
+    }
+
+    @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+    }
+
+    .typewriter {
+    --caret: currentcolor;
+    }
+
+    .typewriter::before {
+    content: "";
+    animation: typing 13.5s infinite;
+    }
+
+    .typewriter::after {
+    content: "";
+    border-right: 1px solid var(--caret);
+    animation: blink 0.5s linear infinite;
+    }
+
+    .typewriter.thick::after {
+    border-right: 1ch solid var(--caret);
+    }
+
+    .typewriter.nocaret::after {
+    border-right: 0;
+    }
+
+
+    @media (prefers-reduced-motion) {
+    .typewriter::after {
+    animation: none;
+    }
+
+    @keyframes sequencePopup {
+    0%, 100% { content: "developer"; }
+    25% { content: "writer"; }
+    50% { content: "reader"; }
+    75% { content: "human"; }
+    }
+
+    .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+    }
+    }
+
+    /* Footer styles */
+        footer {
+            background-color: transparent;
+            color: #ffffff;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin: auto;
+        }
+
+        /* Responsive footer */
+        @media (max-width: 767px) {
+            footer {
+                text-align: center;
+            }
+        }
+        /* Hacker-style welcome message */
+        h4 {
+            font-size: 2rem;
+            color: #0f0; /* Green text color */
+            text-align: center; /* Center-align the text */
+            margin-top: 100px; /* Add space at the top */
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0; /* Hacker-style text shadow */
+          
+        }
+
+        /* Center the username */
+        h4 p {
+            display: inline-block; /* Make the username inline-block to center it */
+            margin: 0;
+            color: #0f0; /* Green text color */
+            text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0, 0 0 40px #0f0, 0 0 80px #0f0; /* Hacker-style text shadow */
+        }
+    </style>
+</head>
+  <body>
+    
+
+<h4>Welcome! <p>{{ request.user.username }}</p></h4>
+    <canvas id="c"></canvas>
+    <article class="wrapper">
+<div class="container animate-fade-in">
+    <h1 aria-label="A Place For">
+    A Place For&nbsp;<span class="typewriter"></span>
+    </h1>
+    {% if request.user.is_authenticated %}
+    <a href="{% url "logout" %}" class="btn btn-primary">Logout</a>
+    <a href="{% url "blog_index" %}" class="btn btn-primary">Home</a>
+    {% else %} 
+    <a href="{% url "blog_index" %}" class="btn btn-primary">Home</a>
+    <a href="{% url "login" %}" class="btn btn-primary">Login</a>
+    <a href="{% url "signup" %}" class="btn btn-primary">Signup</a>
+    {% endif %}
+    <hr>
+  <div class="page-title">
+    {% block page_title %}{% endblock page_title %}
+ </div>
+    <div class="page-content">
+    {% block page_content %}{% endblock page_content %}
+
+</div>
+</div>
+<footer class="container-fluid">
+  <div class="container">
+      <div class="row">
+          <div class="col text-center">
+              <p>&copy; 2024 technotech. All rights reserved.</p>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+    <script>
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+
+    //making the canvas full screen
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+
+    //chinese characters - taken from the unicode charset
+    var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+    //converting the string into an array of single characters
+    matrix = matrix.split("");
+
+    var font_size = 10;
+    var columns = c.width/font_size; //number of columns for the rain
+    //an array of drops - one per column
+    var drops = [];
+    //x below is the x coordinate
+    //1 = y co-ordinate of the drop(same for every drop initially)
+    for(var x = 0; x < columns; x++)
+    drops[x] = 1; 
+
+    //drawing the characters
+    function draw()
+    {
+    //Black BG for the canvas
+    //translucent BG to show trail
+    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+    ctx.fillRect(0, 0, c.width, c.height);
+
+    ctx.fillStyle = "#f4427d";//green text
+    ctx.font = font_size + "px arial";
+    //looping over drops
+    for(var i = 0; i < drops.length; i++)
+    {
+    //a random chinese character to print
+    var text = matrix[Math.floor(Math.random()*matrix.length)];
+    //x = i*font_size, y = value of drops[i]*font_size
+    ctx.fillText(text, i*font_size, drops[i]*font_size);
+
+    //sending the drop back to the top randomly after it has crossed the screen
+    //adding a randomness to the reset to make the drops scattered on the Y axis
+    if(drops[i]*font_size > c.height && Math.random() > 0.975)
+    drops[i] = 0;
+
+    //incrementing Y coordinate
+    drops[i]++;
+    }
+    }
+
+    setInterval(draw, 35);
+
+    </script>
+  </article>
+</body>
+</html>

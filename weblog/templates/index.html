@@ -1,0 +1,139 @@
+<style>
+    .post-container {
+        display: flex;
+        justify-content: center; /* Horizontally center the items */
+        margin: 30px; /* Adjust margin as needed */
+        
+    }
+
+    .post-image {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        border-color: #white;
+    }
+
+    .post-image:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes lights {
+        0% {
+          color: hsl(230, 40%, 80%);
+          text-shadow:
+            0 0 1em hsla(320, 100%, 50%, 0.2),
+            0 0 0.125em hsla(320, 100%, 60%, 0.3),
+            -1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+            1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        }
+        
+        30% { 
+          color: hsl(230, 80%, 90%);
+          text-shadow:
+            0 0 1em hsla(320, 100%, 50%, 0.5),
+            0 0 0.125em hsla(320, 100%, 60%, 0.5),
+            -0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+            0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        40% { 
+          color: hsl(230, 100%, 95%);
+          text-shadow:
+            0 0 1em hsla(320, 100%, 50%, 0.5),
+            0 0 0.125em hsla(320, 100%, 90%, 0.5),
+            -0.25em -0.125em 0.125em hsla(40, 100%, 60%, 0.2),
+            0.25em 0.125em 0.125em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        70% {
+          color: hsl(230, 80%, 90%);
+          text-shadow:
+            0 0 1em hsla(320, 100%, 50%, 0.5),
+            0 0 0.125em hsla(320, 100%, 60%, 0.5),
+            0.5em -0.125em 0.25em hsla(40, 100%, 60%, 0.2),
+            -0.5em 0.125em 0.25em hsla(200, 100%, 60%, 0.4);
+        }
+        
+        100% {
+          color: hsl(230, 40%, 80%);
+          text-shadow:
+            0 0 1em hsla(320, 100%, 50%, 0.2),
+            0 0 0.125em hsla(320, 100%, 60%, 0.3),
+            1em -0.125em 0.5em hsla(40, 100%, 60%, 0),
+            -1em 0.125em 0.5em hsla(200, 100%, 60%, 0);
+        }
+        
+      }
+      
+    
+      
+      h2 {
+        margin: auto;
+        font-size: 3.5rem;
+        font-weight: 300;
+        animation: lights 5s 750ms linear infinite;
+      }
+      .post-container,
+      h2,
+      h3,
+      small,
+      p {
+          color: white;
+      }
+    
+</style>
+
+
+
+
+{% extends "base.html" %}
+
+
+{% block page_title %}
+
+<h2>Let's Dive Into Technology</h2>
+
+{% endblock page_title %}
+
+
+{% block page_content %}
+
+    {% block posts %}
+
+        {% for post in posts %}
+
+            <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+
+
+            <small>
+
+                {{ post.created_on.date }} | Categories:
+
+                {% for category in post.categories.all %}
+
+                    <a href="{% url 'blog_category' category.name %}">
+
+                        {{ category.name }}
+
+                    </a>
+
+                {% endfor %}
+
+            </small>
+            
+            <div class="post-container">
+                {% if post.blog_image %}
+                    <img src="{{ post.blog_image.url }}" class="post-image" alt="{{ post.title }}">
+                {% endif %}
+            </div>
+
+            <h3 style= color:white;>{{ post.body | slice:":400" }}...</h3>
+
+        {% endfor %}
+
+    {% endblock posts %}
+
+{% endblock page_content %}

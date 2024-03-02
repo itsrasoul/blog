@@ -1,0 +1,4 @@
+Django==4.22
+django-crispy-forms==2.1
+django-taggit==3.0
+Pillow==9.3
