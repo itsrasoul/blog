@@ -59,9 +59,9 @@
         <div style="background-color: rgba(255, 255, 255, 0.0); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
             <p style="color: #ffffff;">
                 On <span style="font-style: italic;">{{ comment.created_on.date }}</span> 
-                <b style="color: lime;">{{ request.user.username }}</b> wrote:
+                <b style="color: lime;"> {{ request.user.username }}</b> wrote:
             </p>
-            <p>
+            <p> 
                 {{ comment.body | linebreaks }}
             </p>
         </div>

@@ -77,7 +77,6 @@
         animation: lights 5s 750ms linear infinite;
       }
       .post-container,
-      h2,
       h3,
       small,
       p {
@@ -94,7 +93,7 @@
 
 {% block page_title %}
 
-<h2>Let's Dive Into Technology</h2>
+<h2>Stay ahead with the latest tech news, views, and innovations.</h2>
 
 {% endblock page_title %}
 
@@ -130,7 +129,7 @@
                 {% endif %}
             </div>
 
-            <h3 style= color:white;>{{ post.body | slice:":400" }}...</h3>
+            <h3 style= color:white;>{{ post.body | slice:":150" }}...</h3>
 
         {% endfor %}
 
