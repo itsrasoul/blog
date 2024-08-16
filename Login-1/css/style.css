@@ -205,3 +205,48 @@ button[type="submit"]:hover {
         font-size: 16px;
     }
 }
+
+/* Keyframes for letter animation */
+@keyframes letterAppear {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style for each letter span */
+#welcome-text span,
+#create-account-text span {
+    display: inline-block;
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start below */
+    animation: letterAppear 0.5s ease-out forwards;
+}
+
+/* Apply staggered animation to each letter */
+#welcome-text span:nth-child(1),
+#create-account-text span:nth-child(1) { animation-delay: 0.1s; }
+#welcome-text span:nth-child(2),
+#create-account-text span:nth-child(2) { animation-delay: 0.2s; }
+#welcome-text span:nth-child(3),
+#create-account-text span:nth-child(3) { animation-delay: 0.3s; }
+#welcome-text span:nth-child(4),
+#create-account-text span:nth-child(4) { animation-delay: 0.4s; }
+#welcome-text span:nth-child(5),
+#create-account-text span:nth-child(5) { animation-delay: 0.5s; }
+#welcome-text span:nth-child(6),
+#create-account-text span:nth-child(6) { animation-delay: 0.6s; }
+#welcome-text span:nth-child(7),
+#create-account-text span:nth-child(7) { animation-delay: 0.7s; }
+#welcome-text span:nth-child(8),
+#create-account-text span:nth-child(8) { animation-delay: 0.8s; }
+#welcome-text span:nth-child(9),
+#create-account-text span:nth-child(9) { animation-delay: 0.9s; }
+#welcome-text span:nth-child(10),
+#create-account-text span:nth-child(10) { animation-delay: 1.0s; }
+#welcome-text span:nth-child(11),
+#create-account-text span:nth-child(11) { animation-delay: 1.1s; }
+#welcome-text span:nth-child(12),
+#create-account-text span:nth-child(12) { animation-delay: 1.2s; }
+#welcome-text span:nth-child(13),
+#create-account-text span:nth-child(13) { animation-delay: 1.3s; }
+#welcome-text span:nth-child(14),
+#create-account-text span:nth-child(14) { animation-delay: 1.4s; }
