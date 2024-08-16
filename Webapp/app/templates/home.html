@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="home-content">
+    <div class="hero-section">
+        <h1>Welcome to Your AI Chatbot!</h1>
+        <p>Transform your communication with cutting-edge AI technology.</p>
+        <a href="{% url 'chat' %}" class="cta-button">Start Chatting</a>
+    </div>
+    <div class="info-section">
+        <h2>What Makes Our AI Chatbot Special?</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <h3>Smart Conversations</h3>
+                <p>Our AI chatbot understands and responds to your messages with human-like precision, making interactions smooth and natural.</p>
+            </div>
+            <div class="info-card">
+                <h3>24/7 Availability</h3>
+                <p>Whether it's day or night, our AI chatbot is always here to assist you with your queries and needs.</p>
+            </div>
+            <div class="info-card">
+                <h3>Seamless Integration</h3>
+                <p>Easily integrate our chatbot into your existing platforms for a unified and efficient user experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .home-content {
+        font-family: Arial, sans-serif;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, #4a90e2, #50e3c2);
+        color: white;
+        padding: 60px 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .hero-section p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 1.1em;
+        color: white;
+        background-color: #007bff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+        background-color: #0056b3;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .info-section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .info-cards {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .info-card {
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        width: 280px;
+        text-align: left;
+    }
+
+    .info-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .info-card p {
+        font-size: 1em;
+        color: #666;
+    }
+</style>
+{% endblock %}

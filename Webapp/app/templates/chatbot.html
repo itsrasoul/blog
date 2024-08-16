@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div id="chat-box">
+        <!-- Chat messages will go here -->
+    </div>
+    <div class="chat-input">
+        <form id="chat-form" method="POST">
+            {% csrf_token %}
+            <input type="text" name="message" id="message" placeholder="Type your message..." autocomplete="off" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Adjust based on your needs */
+        padding: 20px;
+    }
+
+    #chat-box {
+        width: 100%;
+        max-width: 600px; /* Adjust based on your design */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        height: 400px; /* Adjust based on your needs */
+        overflow-y: auto;
+        background-color: #f9f9f9;
+    }
+
+    .chat-input {
+        width: 100%;
+        max-width: 600px; /* Adjust based on your design */
+        display: flex;
+        justify-content: center;
+    }
+
+    #chat-form {
+        display: flex;
+        width: 100%;
+    }
+
+    #message {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
